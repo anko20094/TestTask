@@ -1,0 +1,27 @@
+<section class="container">
+  <div class="form-signin">
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <div class="col-12">
+          <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+          <%= form_with model: @link, method: :create do |link| %>
+            <%= link.text_field :name, placeholder: "Email address",  class: "form-control mb-3"%>
+            <%= link.submit 'Add', class: "btn btn-lg btn-primary btn-block col-12"%>
+          <% end %>
+        </div>
+        <div class="col-12">
+          <% @links&.each do |link| %>
+            <article class='card mt-3'>
+              <div class='card-body'>
+                <h4><%= link.name %></h4>
+              </div>
+            </article>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="mt-auto py-3 bg-light text-center">
+  <p class="mt-3 text-muted">&copy; shkoropad <%= Time.now.year %></p>
+</footer>
