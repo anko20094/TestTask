@@ -9,7 +9,7 @@ class LinksController < ApplicationController
     if @link.save
       redirect_to root_path
     else
-      render :index, notice: 'nope!'
+      render :index
     end
   end
 
