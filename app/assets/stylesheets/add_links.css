@@ -4,8 +4,12 @@ body {
 }
 
 body {
-    padding-top: 10%;
+    padding-top: 6%;
     background-color: #f5f5f5;
+}
+
+footer {
+
 }
 
 #success, #warning {

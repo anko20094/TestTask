@@ -5,26 +5,23 @@
   <strong>Warning!</strong> There was a problem with your network connection, but your links will be added after restore internet connection.
 </div>
 <section class="container">
-  <div class="form-signin">
-    <div class="row justify-content-center">
-      <div class="col-4">
-        <div class="col-12">
-          <h1 class="h3 mb-3 font-weight-normal">Please write link</h1>
-          <%= form_with model: @link, method: :create do |link| %>
-            <%= link.text_field :name, placeholder: "www.example.com",  class: "form-control mb-3 py-2"%>
-            <%#= link.submit 'Add', class: "btn btn-lg btn-primary btn-block col-12 mb-3"%>
-          <% end %>
-          <button class="btn btn-lg btn-primary btn-block col-12 mb-3">Add</button>
-        </div>
-        <div class="col-12" id="output">
-          <% @links&.each do |link| %>
-            <article class='card mt-2'>
-              <div class='card-body'>
-                <h4 class='text-center'><%= link.name %></h4>
-              </div>
-            </article>
-          <% end %>
-        </div>
+  <div class="row justify-content-center">
+    <div class="col-4">
+      <div class="col-12">
+        <h1 class="h3 mb-3 font-weight-normal">Please write link</h1>
+        <%= form_with model: @link, method: :create do |link| %>
+          <%= link.text_field :name, placeholder: "www.example.com",  class: "form-control mb-3 py-2"%>
+        <% end %>
+        <button class="btn btn-lg btn-primary btn-block col-12 mb-3">Add</button>
+      </div>
+      <div class="col-12" id="output">
+        <% @links&.each do |link| %>
+          <article class='card mb-2'>
+            <div class='card-body'>
+              <h4 class='text-center'><%= link.name %></h4>
+            </div>
+          </article>
+        <% end %>
       </div>
     </div>
   </div>

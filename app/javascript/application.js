@@ -37,7 +37,7 @@ $(document).on('turbolinks:load', function() {
 
   function createNewTags(link) {
     $('<h4 class="text-center"></h4>').text(link).appendTo($('<div class="card-body">')
-      .appendTo($('<article class="card mt-2">').prependTo($('#output'))));
+      .appendTo($('<article class="card mb-2">').prependTo($('#output'))));
   }
 
   function validateUrl(link) {
@@ -58,6 +58,7 @@ $(document).on('turbolinks:load', function() {
       type: "POST",
       error: function() {
         sendValueToLocalStorage(link);
+        $("#link_name").val('');
         $("#warning").show();
         setTimeout(function() { $("#warning").hide(); }, 3500);
       },
